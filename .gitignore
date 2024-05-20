@@ -1,0 +1,7 @@
+*.ipynb
+*.pdf
+*.out
+*.log
+*.bbl
+*.blg
+*.aux

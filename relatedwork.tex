@@ -1,0 +1,15 @@
+\section {Related Work}\label{sec:relatedwork}
+
+LLMs have been used as judges to evaluate performance of other LLMs on various tasks, including evaluation of story generation \citep{chiang2023can}, retrieval-augmented generation \citep{es2023ragas},  visual QA \citep{maas2024improving}, as well as code comprehension \citep{yuan2023evaluating} and multilingual evaluation \citep{hada2023large}. \citet{Zhang2024LLMEval} and \citet{sottana2023evaluation} have proposed ways to standardize LLM evaluations, and the roles the \judgemodels might play in such solutions.
+%
+Position bias has been observed in many setups using LLMs as judges \citep{zheng2023large, wang2023large}, and methods like alignment-based calibration systems \citep{li2023split} and permutation self-consistency \citep{tang2023found} have been proposed as possible mitigations.
+
+\citet{judgingllms} study the alignment of \judgemodels with humans on open-ended tasks. \citet{selfrewardingmodels} use LLMs as evaluators to construct self-rewarding models, which are subsequently employed for training and fine-tuning other LLMs.
+%
+\citet{liusie2024llm} have shown that LLMs perform better in comparative assessment compared to absolute scoring, which can be used for reliably measuring the relative performance of models \citep{liu2024aligning} and creating classifiers for pairwise grading \cite{llmasclassifier}.
+%
+\citet{zeng2023evaluating} have proposed a benchmark for evaluating the performance of LLMs as judges. \citet{shankar2024validates} introduce an iterative method for aligning \judgemodels to humans by generating evaluation criteria and assertions. \citet{judgelm} have proposed fine-tuning LLMs to improve their performance as judges.
+
+% While there exist leaderboards for assessing automatic evaluation of instruction-following models such as \citet{alpaca_eval} and \citet{evaluationinsttunedbench}, there is a dearth of research exploring the viability of employing LLMs as judges for Core Knowledge Benchmarks. Notably, \citet{openqa} conducted a study on core knowledge benchmarks like TriviaQA \cite{triviaqa} and Natural Questions \cite{naturalquestions}, but failed to encompass the entire spectrum of LLMs available for examination.
+
+% Several frameworks have been proposed to delve deeper into LLM evaluation \cite{li2023beyond}, and to utilize judge models as . 

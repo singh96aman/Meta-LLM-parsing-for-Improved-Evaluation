@@ -1,0 +1,10 @@
+\begin{abstract}
+The \textit{LLM-as-a-judge} paradigm is rapidly gaining traction as an approach to evaluating Large Language Models (LLMs), as it offers a promising solution to the scalability challenges associated with human evaluation. 
+However, relatively little is known about the strengths, weaknesses, and potential biases associated with this setup.
+% While previous studies primarily focus on LLMs' capacity as human proxies, there's a crucial need to gauge their effectiveness against humans in simple, objective scenarios first. 
+In this paper, we present a comprehensive study involving various pairs of LLMs -- both base and instruction-tuned models -- evaluated alongside human annotations. 
+Leveraging TriviaQA as a benchmark for assessing objective knowledge reasoning, we conduct a comprehensive study of the performance of various LLMs acting as judges, as well as their alignment with human judgments across different sizes, families, few-shot scenarios, and judge prompts. 
+Our research uncovers substantial misalignment between \judgemodels and human annotations, and we show that even when they exhibit significant alignment, this does not necessarily translate to similar evaluation scores. 
+We conduct an exhaustive error analysis, highlighting vulnerabilities inherent in Judge LLMs, particularly in instruction-tuned models. 
+Additionally, we explore prompt sensitivities and biases in \judgemodels and propose potential strategies for improving their accuracy. 
+\end{abstract}

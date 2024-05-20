@@ -1,0 +1,199 @@
+\documentclass{article}
+
+
+% if you need to pass options to natbib, use, e.g.:
+%     \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading neurips_2023
+
+
+% ready for submission
+\usepackage{neurips_2024}
+
+
+% to compile a preprint version, e.g., for submission to arXiv, add add the
+% [preprint] option:
+%     \usepackage[preprint]{neurips_2023}
+
+
+% to compile a camera-ready version, add the [final] option, e.g.:
+%     \usepackage[final]{neurips_2023}
+
+
+% to avoid loading the natbib package, add option nonatbib:
+%    \usepackage[nonatbib]{neurips_2023}
+
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage[hidelinks]{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+\usepackage{multirow}
+\usepackage{xspace}
+
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{lineno}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{tcolorbox}
+\linenumbers
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add all custom commands here
+
+\newcommand*\samethanks[1][\value{footnote}]{\footnotemark[#1]}
+ \newcommand{\kc}[1]{\textcolor{red}{Kartik: #1}}
+%\newcommand{\kc}[1]{}
+\newcommand{\dieuwke}[1]{\textcolor{red!50!blue!80}{DH: #1}}
+% \newcommand{\dieuwke}[1]{}
+
+% Custom font for evaluation and judge model names
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{red}{RGB}{255,0,0}
+% \newcommand{\eval}[1]{{\textcolor{darkgreen}{#1}}}
+\newcommand{\eval}[1]{{\fontfamily{phv}\selectfont #1}}
+\newcommand{\judge}[1]{\texttt{\textcolor{black}{#1}}}
+
+\newcommand{\njudges}{9\xspace}
+\newcommand{\nexamtakers}{9\xspace}
+
+\newcommand{\evaluatormodel}{exam-taker model\xspace}
+\newcommand{\evaluatormodels}{exam-taker models\xspace}
+\newcommand{\Evaluatormodel}{Exam-taker model\xspace}
+\newcommand{\Evaluatormodels}{Exam-taker models\xspace}
+
+\newcommand{\judgemodel}{judge model\xspace}
+\newcommand{\judgemodels}{judge models\xspace}
+\newcommand{\Judgemodel}{Judge model\xspace}
+\newcommand{\JudgeModel}{Judge Model\xspace}
+\newcommand{\Judgemodels}{Judge models\xspace}
+\newcommand{\JudgeModels}{Judge Models\xspace}
+
+\newcommand{\specialcell}[2][c]{\footnotesize\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+% \def\mytcolorbox#1#2#3{
+% \begin{tcolorbox}[outerbox, title={\textit{#1}}]
+%   \begin{tcolorbox}[colback=lightorange, colframe=myorange!75!black, boxrule=0.5mm, sharp corners, rounded corners]
+%     \texttt{#2}
+%   \end{tcolorbox}
+%   \vspace{1em}
+%   \texttt{#3}
+% \end{tcolorbox}
+% }
+
+\def\mytcolorbox#1#2#3{
+\begin{tcolorbox}[outerbox, title={\textit{#1}}]
+\texttt{#2} \\
+\\
+\texttt{#3}
+\end{tcolorbox}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cleverref
+\usepackage[noabbrev,capitalize,nameinlink]{cleveref}
+\crefname{section}{Section}{Sections}%{\S}{\S\S}
+\crefname{table}{Table}{}
+\crefname{figure}{Figure}{}
+\crefname{section}{\S}{\S\S}
+\Crefname{section}{\S}{\S\S}
+\crefname{appendix}{Appendix}{Appendices}
+\Crefname{Appendix}{Appendix}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Judging the Judges: Evaluating Alignment and Vulnerabilities in Judge LLMs}
+
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to break the
+% lines. Using \AND forces a line break at that point. So, if LaTeX puts 3 of 4
+% authors names on the first line, and the last on the second line, try using
+% \AND instead of \And before the third author name.
+
+
+\author{%
+  Aman Singh Thakur\thanks{Equal contribution}\\
+  College of Information \& Computer Sciences\\
+  University of Massachusetts\\
+  \texttt{amansinghtha@umass.edu} \\
+  \And
+  Kartik Choudhary\samethanks\\
+  College of Information \& Computer Sciences\\
+  University of Massachusetts\\
+  \texttt{kartikchoudh@umass.edu} \\
+  \And
+  Venkat Srinik Ramayapally\samethanks\\
+  College of Information \& Computer Sciences\\
+  University of Massachusetts\\
+  \texttt{vramayapally@umass.edu} \\
+  \And
+  Sankaran Vaidyanathan\\
+  College of Information \& Computer Sciences\\
+  University of Massachusetts\\
+  \texttt{sankaranv@cs.umass.edu} \\
+  \And
+  Dieuwke Hupkes\\
+  % Fundamental AI Research (FAIR) Lab\\
+  Meta\\
+  \texttt{dieuwkehupkes@meta.com} \\
+}
+
+
+
+
+\begin{document}
+
+\hyphenpenalty=10000
+\maketitle
+
+\input{abstract}
+
+\input{introduction}
+\input{relatedwork}
+\input{method}
+\input{results}
+\input{analysis}
+\input{conclusion}
+
+% \begin{ack}
+% Use unnumbered first level headings for the acknowledgments. All acknowledgments
+% go at the end of the paper before the list of references. Moreover, you are required to declare
+% funding (financial activities supporting the submitted work) and competing interests (related financial activities outside the submitted work).
+% More information about this disclosure can be found at: \url{https://neurips.cc/Conferences/2023/PaperInformation/FundingDisclosure}.
+
+
+% Do {\bf not} include this section in the anonymized submission, only in the final paper. You can use the \texttt{ack} environment provided in the style file to autmoatically hide this section in the anonymized submission.
+% \end{ack}
+
+
+
+% \section{Supplementary Material}
+
+% Authors may wish to optionally include extra information (complete proofs, additional experiments and plots) in the appendix. All such materials should be part of the supplemental material (submitted separately) and should NOT be included in the main submission.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{acl_natbib}
+\bibliography{bibliography}
+
+\input{appendix}
+
+% \input{neurips-checklist}
+
+\end{document}
